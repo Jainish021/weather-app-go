@@ -21,8 +21,11 @@ weatherForm.addEventListener("submit", (e) => {
 
     fetch("/weather?address=" + location).then((response) => {
         response.json().then((data) => {
-            if (data.error) {
-                message1.textContent = data.error
+            if (data.ErrorMessage) {
+                message1.textContent = data.ErrorMessage
+                if (content.className === "d-block") {
+                    content.className = content.className.replace("d-block", "d-none")
+                }
             } else {
                 message1.textContent = data.Location
                 if (content.className === "d-none") {
