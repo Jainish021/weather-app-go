@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"log"
 	"fmt"
 	"net/http"
@@ -17,9 +18,9 @@ func main() {
 
 	routes.WeatherAppRoutes(r)
 	
-	port := cfg.Port
+	port := os.Getenv("PORT")
 	if port == "" {
-        port = "3000"
+        port = cfg.Port
     }
 
 	fmt.Printf("Server is up on port %s.\n", port)
