@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Help</title>
+    {{ template "head" . }}
+</head>
+
+<body>
+    <div class="container d-flex flex-column flex-grow-1">
+        {{ template "header" . }}
+        <p>
+            {{ .HelpText }}
+        </p>
+    </div>
+    {{ template "footer" . }}
+    <script src="/public/js/toggle.js"></script>
+</body>
+
+</html>
