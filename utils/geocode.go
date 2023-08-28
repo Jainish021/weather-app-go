@@ -6,12 +6,14 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"github.com/Jainish021/weather-app-go/config"
 )
 
 func Geocode(address string) (map[string]interface{}, error) {
-	accessToken := "pk.eyJ1IjoiamFpbmlzaDAyMSIsImEiOiJja3BvZGV5aHg0bmNvMm9ueHM0NGwyZ2p4In0.yKwgCnboa4q2d1Lss3BmXg"
+	cfg := config.LoadConfig()
+
 	geocodeURL := fmt.Sprintf("https://api.mapbox.com/geocoding/v5/mapbox.places/%s.json?access_token=%s&limit=1",
-		url.QueryEscape(address), accessToken)
+		url.QueryEscape(address), cfg.GeocodeAPIKey)
 
 	resp, err := http.Get(geocodeURL)
 	if err != nil {

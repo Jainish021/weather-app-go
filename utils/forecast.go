@@ -6,12 +6,14 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"github.com/Jainish021/weather-app-go/config"
 )
 
 func Forecast(latitude, longitude string) (map[string]interface{}, error) {
-	apiKey := "6a7c888326b2b4eb662a372b98874387"
+	cfg := config.LoadConfig()
+
 	url := fmt.Sprintf("http://api.weatherstack.com/current?access_key=%s&query=%s,%s&units=f",
-		apiKey, url.QueryEscape(latitude), url.QueryEscape(longitude))
+		cfg.ForecastAPIKey, url.QueryEscape(latitude), url.QueryEscape(longitude))
 
 	resp, err := http.Get(url)
 	if err != nil {
