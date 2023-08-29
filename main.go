@@ -1,7 +1,6 @@
 package main
 
 import (
-	"os"
 	"log"
 	"fmt"
 	"net/http"
@@ -12,16 +11,17 @@ import (
 
 func main() {
 	r := mux.NewRouter()
-	cfg := config.LoadConfig()
 
 	r.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("public"))))
 
 	routes.WeatherAppRoutes(r)
 	
-	port := os.Getenv("PORT")
-	if port == "" {
-        port = cfg.Port
-    }
+	prodcfg := config.LoadProdConfig()
+	port := prodcfg.Port
+	if prodcfg.Port == ""{
+		devcfg := config.LoadDevConfig()
+		port = devcfg.Port
+	}
 
 	fmt.Printf("Server is up on port %s.\n", port)
 

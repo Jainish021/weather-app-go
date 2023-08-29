@@ -10,10 +10,15 @@ import (
 )
 
 func Geocode(address string) (map[string]interface{}, error) {
-	cfg := config.LoadConfig()
+	prodcfg := config.LoadProdConfig()
+	GeocodeAPIKey := prodcfg.GeocodeAPIKey
+	if prodcfg.GeocodeAPIKey == ""{
+		devcfg := config.LoadDevConfig()
+		GeocodeAPIKey = devcfg.GeocodeAPIKey
+	}
 
 	geocodeURL := fmt.Sprintf("https://api.mapbox.com/geocoding/v5/mapbox.places/%s.json?access_token=%s&limit=1",
-		url.QueryEscape(address), cfg.GeocodeAPIKey)
+		url.QueryEscape(address), GeocodeAPIKey)
 
 	resp, err := http.Get(geocodeURL)
 	if err != nil {
