@@ -1,1 +1,1 @@
-web: weather-app-go -env=production
+web: ./weather-app-go
