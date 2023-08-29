@@ -1,1 +1,1 @@
-web: weather-app-go
+web: go run main.go
