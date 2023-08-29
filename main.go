@@ -25,5 +25,5 @@ func main() {
 
 	fmt.Printf("Server is up on port %s.\n", port)
 
-	log.Fatal(http.ListenAndServe("localhost:" + port, r))
+	log.Fatal(http.ListenAndServe(":" + port, r))
 }
