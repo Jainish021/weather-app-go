@@ -18,10 +18,10 @@ func main() {
 	
 	prodcfg := config.LoadProdConfig()
 	port := prodcfg.Port
-	if prodcfg.Port == ""{
-		devcfg := config.LoadDevConfig()
-		port = devcfg.Port
-	}
+	// if prodcfg.Port == ""{
+	// 	devcfg := config.LoadDevConfig()
+	// 	port = devcfg.Port
+	// }
 
 	fmt.Printf("Server is up on port %s.\n", port)
 

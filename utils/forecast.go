@@ -12,10 +12,10 @@ import (
 func Forecast(latitude, longitude string) (map[string]interface{}, error) {
 	prodcfg := config.LoadProdConfig()
 	ForecastAPIKey := prodcfg.ForecastAPIKey
-	if prodcfg.ForecastAPIKey == ""{
-		devcfg := config.LoadDevConfig()
-		ForecastAPIKey = devcfg.ForecastAPIKey
-	}
+	// if prodcfg.ForecastAPIKey == ""{
+	// 	devcfg := config.LoadDevConfig()
+	// 	ForecastAPIKey = devcfg.ForecastAPIKey
+	// }
 
 	url := fmt.Sprintf("http://api.weatherstack.com/current?access_key=%s&query=%s,%s&units=f",
 		ForecastAPIKey, url.QueryEscape(latitude), url.QueryEscape(longitude))
