@@ -1,1 +1,1 @@
-web: ./weather-app-go
+web: weather-app-go
