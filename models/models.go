@@ -1,5 +1,16 @@
 package models
 
+type DevConfig struct {
+    Port     string
+    ForecastAPIKey   string
+	GeocodeAPIKey	string
+}
+
+type ProdConfig struct {
+    Port     string
+    ForecastAPIKey   string
+	GeocodeAPIKey	string
+}
 
 type PageData struct{
 	Title string

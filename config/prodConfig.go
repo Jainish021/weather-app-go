@@ -2,16 +2,11 @@ package config
 
 import(
 	"os"
+    "github.com/Jainish021/weather-app-go/models"
 )
 
-type ProdConfig struct {
-    Port     string
-    ForecastAPIKey   string
-	GeocodeAPIKey	string
-}
-
-func LoadProdConfig() ProdConfig {
-    return ProdConfig{
+func LoadProdConfig() models.ProdConfig {
+    return models.ProdConfig{
         Port: os.Getenv("PORT"),
         ForecastAPIKey: os.Getenv("ForecastAPIKey"),
 		GeocodeAPIKey: os.Getenv("GeocodeAPIKey"),
