@@ -1,11 +1,11 @@
 # Weather Website
 > Link to the application: https://weather-app-go-2327142ff400.herokuapp.com/<br>
 
-![Screenshot of main page](https://github.com/Jainish021/images/blob/main/weather-app-1.png)
+![Screenshot of main page](https://github.com/Jainish021/images/blob/main/weather-app-3.png)
 <br>
 I developed a robust Go backend with a REST API and designed a user-friendly interface using Bootstrap to create a powerful and intuitive weather application. My WeatherApp allows users to quickly access real-time weather information for any location worldwide. I integrated the Mapbox API to fetch location coordinates and the Weatherstack API to retrieve up-to-date weather data, ensuring users have access to accurate and timely information.<br>
 
-![Screenshot of main page](https://github.com/Jainish021/images/blob/main/weather-app-2.png)
+![Screenshot of main page](https://github.com/Jainish021/images/blob/main/weather-app-4.png)
 
 ## Key Features:<br>
 - **User-Friendly Interface**: I prioritized user experience by creating an intuitive and visually appealing interface using Bootstrap. Users can easily navigate the application to access the weather data they need effortlessly.<br>
